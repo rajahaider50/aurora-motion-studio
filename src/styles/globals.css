@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #06060b;
+  --color-violet2: #8b5cf6;
+  --color-cyan2: #22d3ee;
+  --color-rose2: #f472b6;
+}
+
+html { scroll-behavior: smooth; }
+body { background: #06060b; color: #f4f4f8; font-family: var(--font-inter), system-ui, sans-serif; overflow-x: hidden; }
+.glass { background: rgba(255,255,255,.05); backdrop-filter: blur(22px) saturate(160%); -webkit-backdrop-filter: blur(22px) saturate(160%); border: 1px solid rgba(255,255,255,.1); box-shadow: 0 8px 40px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.12); }
+.grad-text { background: linear-gradient(120deg,#22d3ee,#8b5cf6 50%,#f472b6); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.aurora { position: fixed; inset: 0; z-index: -1; overflow: hidden; background: radial-gradient(ellipse at top,#12112a,#06060b 70%); }
+.aurora i { position: absolute; width: 46vmax; height: 46vmax; border-radius: 50%; filter: blur(110px); opacity: .35; animation: drift 22s ease-in-out infinite alternate; }
+.aurora i:nth-child(1) { background: #8b5cf6; top: -15%; left: -10%; }
+.aurora i:nth-child(2) { background: #22d3ee; bottom: -20%; right: -10%; animation-delay: -8s; }
+.aurora i:nth-child(3) { background: #f472b6; top: 35%; left: 40%; width: 28vmax; height: 28vmax; opacity: .22; animation-delay: -14s; }
+@keyframes drift { to { transform: translate(8vmax,6vmax) scale(1.2); } }
+@media (pointer: fine) { body, a, button { cursor: none; } }
